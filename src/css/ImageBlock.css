@@ -1,0 +1,22 @@
+.image {
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+  transition: 0.5s;
+}
+
+.image:hover {
+  filter: grayscale(1);
+}
+
+.image img {
+  width: 100%;
+}
+
+p {
+  font-weight: 500;
+  color: #34373f;
+  text-align: center;
+  padding: 5px 0;
+}

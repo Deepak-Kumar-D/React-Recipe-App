@@ -2,12 +2,10 @@
 
 let localRecipe = [
   {
-    id: "cheese-burger",
     name: "Cheese Burger",
     ingredients: [
       "4 halved burger buns",
-      "3 medium (boiled",
-      "mashed,peeled) potato",
+      "3 medium (boiled mashed, peeled) potato",
       "1/2 finely chopped capsicum (green pepper)",
       "2 tablespoon American corn kernels",
       "80 gm shredded cabbage",
@@ -31,7 +29,6 @@ let localRecipe = [
     src: "/images/cheese-burger.jpg",
   },
   {
-    id: "french-fries-with-dip",
     name: "French Fries",
     ingredients: [
       "4 Potatoes",
@@ -55,7 +52,6 @@ let localRecipe = [
     src: "/images/french-fries-with-dip.jpg",
   },
   {
-    id: "pancake-with-honey",
     name: "Pancake with Honey",
     ingredients: [
       "1 1/2 cups all-purpose flour",
@@ -76,7 +72,6 @@ let localRecipe = [
     src: "/images/pancake-with-honey.jpg",
   },
   {
-    id: "red-pasta",
     name: "Red Pasta",
     ingredients: [
       "2 tablespoons olive oil",
@@ -105,7 +100,6 @@ let localRecipe = [
     src: "/images/red-pasta.jpg",
   },
   {
-    id: "white-pasta",
     name: "White Pasta",
     ingredients: [
       "1 lb penne pasta",
@@ -116,7 +110,7 @@ let localRecipe = [
       "1 cup milk",
       "2 tsp dried parsley",
       "1 cup grated parmesan cheese",
-      "salt and pepper to taste",
+      "Salt and pepper to taste",
     ],
     procedure: [
       "For preparing this pasta recipe, add water, oil and 1 tsp salt in a container. Heat it for a minute on high flame. Keep stirring time to time. Add pasta to it and heat it for additional 10 minutes on medium flame. Make sure that the pasta is boiled properly as sometimes it may take some extra time. Keep stirring in between so that the pasta doesn't stick to the bottom of the container. After boiling, drain out the water from pasta.",
@@ -127,23 +121,19 @@ let localRecipe = [
     src: "/images/white-pasta.jpg",
   },
   {
-    id: "seekh-kebab",
     name: "Seekh Kebab",
     ingredients: [
       "1.1 pounds (500 grams) ground lamb",
-      "1 medium onion",
-      "finely chopped",
-      "1/2 cup fresh coriander",
-      "chopped",
+      "1 medium onion finely chopped",
+      "1/2 cup fresh coriander chopped",
       "2 tablespoons unsweetened plain yogurt",
       "2 tablespoons lemon juice",
       "1 tablespoon garlic paste",
       "1 tablespoon ginger paste",
       "1 1/2 teaspoons kosher salt",
       "1 teaspoon garam masala",
-      "2 to 3 green chilies",
-      "finely chopped",
-      "4 tablespoons vegetable oil, or as needed",
+      "2 to 3 green chilies finely chopped",
+      "4 tablespoons vegetable oil or as needed",
     ],
     procedure: [
       "Gather the ingredients.",
@@ -157,7 +147,6 @@ let localRecipe = [
     src: "/images/sheek-kebab.jpg",
   },
   {
-    id: "chocolate-cupcake",
     name: "Chocolate Cupcake",
     ingredients: [
       "1 cup (130g) all purpose flour",
@@ -170,8 +159,8 @@ let localRecipe = [
       "1/2 cup (120ml) vegetable oil",
       "3/4 tsp vanilla",
       "1/2 cup (120ml) hot water",
-      "1 1/4 cups (280g) unsalted butter, room temperature",
-      "12 oz semi sweet chocolate chips, melted",
+      "1 1/4 cups (280g) unsalted butter at room temperature",
+      "12 oz semi sweet melted chocolate chips",
       "3 tbsp (22g) Hershey’s dark cocoa powder",
       "5 cups (575g) powdered sugar",
       "Pinch of salt",
@@ -196,24 +185,23 @@ let localRecipe = [
     src: "/images/chocolate-cupcake.jpg",
   },
   {
-    id: "gulab-jamun",
     name: "Gulab Jamun",
     ingredients: [
-      "¾ cup (100 grams) milk powder, unsweetened",
-      "½ cup (60 grams) maida/plain flour",
+      "¾ cup (100 grams) unsweetened milk powder",
+      "½ cup (60 grams) maida/all purpose flour",
       "½ tsp baking powder",
       "2 tbsp ghee/clarified butter",
-      "milk (for kneading)",
-      "ghee or oil (for frying)",
+      "Milk (for kneading)",
+      "Ghee or oil (for frying)",
       "2 cup sugar",
       "2 cup water",
       "2 cardamom",
-      "¼ tsp saffron / kesar",
+      "¼ tsp saffron(kesar)",
       "1 tsp lemon juice",
       "1 tsp rose water",
     ],
     procedure: [
-      "firstly, in a large bowl take ¾ cup milk powder, ½ cup maida and ½ tsp baking powder.",
+      "Firstly, in a large bowl take ¾ cup milk powder, ½ cup maida and ½ tsp baking powder.",
       "Mix well, homemade gulab jamun mix is ready.",
       "Now add 2 tbsp ghee and mix well making the flour moist.",
       "Further, add milk as required start to combine.",

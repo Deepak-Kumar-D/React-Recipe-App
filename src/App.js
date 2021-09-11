@@ -1,9 +1,10 @@
-import { createContext, useEffect, useState } from "react";
-import "./App.css";
-import { MainPage } from "./MainPage";
+import { createContext, useState, useEffect } from "react";
 import { Route, Switch } from "react-router-dom";
-import { More } from "./More";
-import { Form } from "./Form";
+import "./css/App.css";
+import { MainPage } from "./components/MainPage";
+import { More } from "./components/More";
+import { Form } from "./components/Form";
+import Edit from "./components/Edit";
 
 const mode = createContext(null);
 
@@ -21,7 +22,7 @@ function App() {
   }
 
   const shade = () => {
-    setTheme(theme === "normal" ? "dark" : "normal");
+    setTheme(theme === "light" ? "dark" : "light");
 
     if (theme === "dark") {
       document.body.style.backgroundImage = "none";
@@ -32,43 +33,50 @@ function App() {
   };
 
   useEffect(() => {
-    // Title of the website
-    document.title = "Just Recipe";
     getRecipe();
-  }, []);
+  });
 
   return (
-    <>
-      <button
-        className="mode"
-        style={{
-          backgroundColor: theme === "dark" ? "#202020" : "#797979",
-          color: theme === "dark" ? "#f5f5f5" : "#f5b876",
-        }}
-        onClick={shade}
-      >
-        {theme.toUpperCase()}
-      </button>
+    <div className="app">
+      <div className="bgContainer">
+        <img src="images/Vector_BG.png" alt="" className="imgBG" />
 
-      <mode.Provider value={{ theme, getRecipe, recipes }}>
-        <Switch>
-          {/* HOME Page with Recipes and searchbar */}
-          <Route exact path="/">
-            <MainPage />
-          </Route>
+        <button
+          className="mode"
+          style={{
+            backgroundColor: theme === "dark" ? "#202020" : "white",
+            color: theme === "dark" ? "#f5f5f5" : "#202020",
+          }}
+          onClick={shade}
+        >
+          {theme.toUpperCase()}
+        </button>
 
-          {/* Procedure Page which shows the ingredients and the procedure of the selected recipe from the pop-up window */}
-          <Route path="/more&:name">
-            <More />
-          </Route>
+        <mode.Provider value={{ theme, getRecipe, recipes }}>
+          <Switch>
+            {/* HOME Page with Recipes and searchbar */}
+            <Route exact path="/">
+              <MainPage />
+            </Route>
 
-          {/* Add a New Recipe Form Page */}
-          <Route path="/addRecipe">
-            <Form />
-          </Route>
-        </Switch>
-      </mode.Provider>
-    </>
+            {/* Procedure Page which shows the ingredients and the procedure of the selected recipe from the pop-up window */}
+            <Route path="/more/:id">
+              <More />
+            </Route>
+
+            {/* Add a New Recipe Form Page */}
+            <Route path="/addRecipe">
+              <Form />
+            </Route>
+
+            {/* Edit a Recipe */}
+            <Route path="/editRecipe/:id">
+              <Edit />
+            </Route>
+          </Switch>
+        </mode.Provider>
+      </div>
+    </div>
   );
 }
 

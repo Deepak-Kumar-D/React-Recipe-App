@@ -1,16 +1,16 @@
 import { useForm } from "react-hook-form";
-import "./App.css";
 import { Title } from "./Title";
 import { Back } from "./Back";
-
 import { useContext } from "react";
-import { mode } from "./App";
+import { mode } from "../App";
+import "../css/Form.css";
 
 function Form() {
   const { theme, getRecipe } = useContext(mode);
 
   const {
     register,
+    reset,
     handleSubmit,
     formState: { errors },
   } = useForm();
@@ -25,14 +25,15 @@ function Form() {
         name: data.name,
         ingredients: data.ingredients.split(", "),
         procedure: data.procedure.split(". "),
-        src: `/images/${data.image}.jpg`,
+        src: data.image,
       }),
     })
       .then((rec) => rec.json())
-      .then((rec) => getRecipe());
-  };
+      .then(() => getRecipe());
 
-  console.log(errors);
+    alert("New Recipe Added!");
+    reset();
+  };
 
   return (
     <>
@@ -101,7 +102,7 @@ function Form() {
             htmlFor="id"
             style={{ color: theme === "dark" ? "" : "#f5b876" }}
           >
-            IMAGE NAME
+            IMAGE LINK
           </label>
           <input
             name="id"

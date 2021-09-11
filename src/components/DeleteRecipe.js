@@ -1,10 +1,10 @@
 import IconButton from "@material-ui/core/IconButton";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { useContext } from "react";
-import { mode } from "./App";
+import { mode } from "../App";
 
 function DeleteRecipe({ id }) {
-  const { theme, getRecipe } = useContext(mode);
+  const { getRecipe } = useContext(mode);
 
   function deleteItem(id) {
     fetch(`https://609e2ac333eed80017957e36.mockapi.io/recipe/${id}`, {
@@ -20,12 +20,7 @@ function DeleteRecipe({ id }) {
       onClick={() => deleteItem(id)}
       className="remove-btn"
     >
-      <DeleteIcon
-        style={{
-          color: theme === "dark" ? "#bb0d0d" : "white",
-        }}
-        fontSize="large"
-      />
+      <DeleteIcon style={{ color: "#bb0d0d" }} fontSize="large" />
     </IconButton>
   );
 }

@@ -1,5 +1,6 @@
 import { useContext } from "react";
-import { mode } from "./App";
+import { mode } from "../App";
+import "../css/Search.css";
 
 function Search({ setSearch }) {
   const { theme } = useContext(mode);
@@ -13,10 +14,9 @@ function Search({ setSearch }) {
           placeholder="Search your delicacy here..."
           onChange={(event) => setSearch(event.target.value)}
           style={{
-            backgroundColor: theme === "dark" ? "" : "#a3a1a1",
+            backgroundColor: theme === "dark" ? "" : "#202020",
             color: theme === "dark" ? "" : "white",
-            border: theme === "dark" ? "" : "2px solid #f5b876",
-            transition: "0.1s",
+            border: theme === "dark" ? "" : "1px solid #f5b876",
           }}
         ></input>
       </div>

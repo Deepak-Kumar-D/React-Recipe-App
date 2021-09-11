@@ -6,20 +6,17 @@ import { Link } from "react-router-dom";
 import { AddNew } from "./AddNew";
 import { DeleteRecipe } from "./DeleteRecipe";
 import { useContext } from "react";
-import { mode } from "./App";
+import { mode } from "../App";
+import "../css/MainPage.css";
 
 function MainPage() {
   const { theme, recipes } = useContext(mode);
-  const [show, setShow] = useState("none");
   const [searchRecipe, setSearch] = useState("");
   const [recName, setRecName] = useState("");
   const [ingds, setIngds] = useState([]);
 
-  const visibility = { display: show };
-
   // Function for the pop-up window to open
   const open = (name, ingredients) => {
-    setShow("flex");
     setRecName(name);
     setIngds(ingredients);
   };
@@ -29,12 +26,11 @@ function MainPage() {
   // Function for the pop-up window to close
   const close = (btn) => {
     btn.stopPropagation();
-    setShow("none");
     setRecName("");
   };
 
   return (
-    <div className="App">
+    <div>
       {/* Title and the search bar Component */}
       <Header setSearch={setSearch} />
 
@@ -58,9 +54,8 @@ function MainPage() {
               <div
                 className="food"
                 style={{
-                  backgroundColor: theme === "dark" ? "" : "#797979",
-                  border: theme === "dark" ? "" : "2px solid #f5b876",
-                  transition: "0.1s",
+                  backgroundColor: theme === "dark" ? "" : "#202020",
+                  border: theme === "dark" ? "" : "1px solid #f5b876",
                 }}
                 key={id}
                 onClick={() => open(name, ingredients)}
@@ -76,7 +71,8 @@ function MainPage() {
                   <div
                     className="foodContent"
                     style={{
-                      backgroundColor: theme === "dark" ? "" : "#797979",
+                      backgroundColor: theme === "dark" ? "" : "#202020",
+                      border: theme === "dark" ? "" : "1px solid #f5b876",
                     }}
                   >
                     {/* Pop-up component which contains the pop-up window requirements */}
@@ -90,11 +86,11 @@ function MainPage() {
                     <DeleteRecipe close={close} id={elements.id}></DeleteRecipe>
 
                     {/* Link to open the procedure page */}
-                    <Link to={`/more&${name}`}>
+                    <Link to={`/more/${id}`}>
                       <button
                         className="more-btn"
                         style={{
-                          filter: theme === "dark" ? "" : "grayscale(0.6)",
+                          color: theme === "dark" ? "" : "#202020",
                         }}
                       >
                         PROCEDURE

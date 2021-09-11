@@ -1,5 +1,6 @@
 import { useContext } from "react";
-import { mode } from "./App";
+import { mode } from "../App";
+import "../css/PopUp.css";
 
 function Popup({ close, recName, contents }) {
   const { theme } = useContext(mode);
