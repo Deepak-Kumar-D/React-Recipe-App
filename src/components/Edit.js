@@ -9,7 +9,7 @@ import { useHistory, useParams } from "react-router";
 function Edit() {
   const { theme, recipes, getRecipe } = useContext(mode);
   const { id } = useParams();
-  const item = recipes.find((ele) => ele.id === id);
+  const item = recipes.find((ele) => ele._id === id);
   const ingds = item.ingredients;
   const procedure = item.procedure;
   const imgLink = item.src;
@@ -18,14 +18,14 @@ function Edit() {
   const { register, handleSubmit } = useForm();
 
   const onSubmit = async (data) => {
-    fetch(`https://609e2ac333eed80017957e36.mockapi.io/recipe/${id}`, {
-      method: "PUT",
+    fetch(`https://db-recipe.herokuapp.com/${id}`, {
+      method: "POST",
       headers: {
         "Content-Type": "application/JSON",
       },
       body: JSON.stringify({
         name: data.name,
-        ingredients: data.ingredients.split(", "),
+        ingredients: data.ingredients.split(","),
         procedure: data.procedure.split(". "),
         src: data.image,
       }),
@@ -44,7 +44,7 @@ function Edit() {
         <Title />
       </div>
       <form
-        method="PUT"
+        method="POST"
         onSubmit={handleSubmit(onSubmit)}
         className="form edit-form"
       >

@@ -11,7 +11,7 @@ function More() {
   const { theme, recipes } = useContext(mode);
 
   const { id } = useParams();
-  const item = recipes.find((ele) => ele.id === id);
+  const item = recipes.find((ele) => ele._id === id);
   const ingds = item.ingredients;
   const procedure = item.procedure;
 

@@ -48,7 +48,7 @@ function MainPage() {
             }
           })
           .map((elements) => {
-            const { id, name, src, ingredients } = elements;
+            const { _id, name, src, ingredients } = elements;
 
             return (
               <div
@@ -57,11 +57,11 @@ function MainPage() {
                   backgroundColor: theme === "dark" ? "" : "#202020",
                   border: theme === "dark" ? "" : "1px solid #f5b876",
                 }}
-                key={id}
+                key={_id}
                 onClick={() => open(name, ingredients)}
               >
                 {/* Recipe image and name Component */}
-                <ImageBlock id={id} name={name} src={src} />
+                <ImageBlock id={_id} name={name} src={src} />
 
                 {/* Pop-up window section */}
                 <div
@@ -83,10 +83,13 @@ function MainPage() {
                     />
 
                     {/* Delete section for removing a recipe */}
-                    <DeleteRecipe close={close} id={elements.id}></DeleteRecipe>
+                    <DeleteRecipe
+                      close={close}
+                      id={elements._id}
+                    ></DeleteRecipe>
 
                     {/* Link to open the procedure page */}
-                    <Link to={`/more/${id}`}>
+                    <Link to={`/more/${_id}`}>
                       <button
                         className="more-btn"
                         style={{

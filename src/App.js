@@ -14,7 +14,7 @@ function App() {
 
   function getRecipe() {
     // Fetching recipe data from the MOCK API
-    fetch("https://609e2ac333eed80017957e36.mockapi.io/recipe", {
+    fetch("https://db-recipe.herokuapp.com/get-recipe", {
       method: "GET",
     })
       .then((rec) => rec.json())

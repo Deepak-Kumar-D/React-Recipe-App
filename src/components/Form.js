@@ -16,7 +16,7 @@ function Form() {
   } = useForm();
 
   const onSubmit = (data) => {
-    fetch("https://609e2ac333eed80017957e36.mockapi.io/recipe", {
+    fetch("https://db-recipe.herokuapp.com/add-recipe", {
       method: "POST",
       headers: {
         "Content-Type": "application/JSON",
